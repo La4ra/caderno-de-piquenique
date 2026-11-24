@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-toalha: #fdf6ec;
+  --xadrez-cor: rgba(201, 74, 74, 0.08);
+  --papel-creme: #fffdf9;
+  --borda-papel: #e6d5c1;
+  --vermelho-piquenique: #c84b4b;
+  --vermelho-escuro: #a33636;
+  --verde-folha: #4a7c59;
+  --texto-principal: #3d2c2e;
+  --texto-suave: #756264;
+  --dourado-criador: #d99b26;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--texto-principal);
+  background-color: var(--bg-toalha);
+  /* Padrão sutil de toalha de piquenique xadrez */
+  background-image: 
+    linear-gradient(90deg, var(--xadrez-cor) 50%, transparent 50%),
+    linear-gradient(var(--xadrez-cor) 50%, transparent 50%);
+  background-size: 40px 40px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .fonte-livro {
+  font-family: 'Lora', serif;
+}
+
+/* Cabeçalho estilo fita de caderno */
+.navbar {
+  background-color: var(--vermelho-piquenique);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(61, 44, 46, 0.15);
+  border-bottom: 4px dashed #f7e6d4;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff7ed;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s;
+}
+
+.nav-link:hover, .nav-link.ativo {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Container Principal */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.2rem;
+}
+
+/* Cartão estilo Página de Livro */
+.pagina-livro {
+  background-color: var(--papel-creme);
+  border: 2px solid var(--borda-papel);
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 6px 6px 0px var(--borda-papel);
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de Receitas */
+.grid-receitas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card-receita {
+  background: var(--papel-creme);
+  border: 1.5px solid var(--borda-papel);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 4px 0px var(--borda-papel);
+  transition: transform 0.2s;
+}
+
+.card-receita:hover {
+  transform: translateY(-3px);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px dashed var(--borda-papel);
+}
+
+.card-corpo {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+/* Selos (Badges) */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.badge-oficial {
+  background-color: #fde8e8;
+  color: var(--vermelho-piquenique);
+  border: 1px solid #f8b4b4;
+}
+
+.badge-parceiro {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.badge-aula {
+  background-color: #def7ec;
+  color: var(--verde-folha);
+  border: 1px solid #84e1bc;
+}
+
+/* Botões */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background-color: var(--vermelho-piquenique);
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: var(--vermelho-escuro);
+}
+
+.btn-secundario {
+  background-color: #f3e8d8;
+  color: var(--texto-principal);
+}
+
+.btn-secundario:hover {
+  background-color: #e6d5c1;
+}
+
+.btn-verde {
+  background-color: var(--verde-folha);
+  color: white;
+}
+
+.btn-perigo {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-perigo:hover {
+  background-color: #fecaca;
+}
+
+/* Formulários */
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-grupo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-campo, .select-campo, .textarea-campo {
+  padding: 0.7rem;
+  border: 1.5px solid var(--borda-papel);
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--texto-principal);
+}
+
+.input-campo:focus, .select-campo:focus, .textarea-campo:focus {
+  outline: none;
+  border-color: var(--vermelho-piquenique);
+}
+
+.erro-msg {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Barra de Filtros */
+.filtros-barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  background: var(--papel-creme);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--borda-papel);
+}
+
+/* Adendos / Comentários */
+.adendo-card {
+  background-color: #faf3e8;
+  border-left: 4px solid var(--verde-folha);
+  padding: 0.9rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
